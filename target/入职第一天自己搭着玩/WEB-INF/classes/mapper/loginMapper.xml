@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.icss.dao.UserDao">  <!--接口/准备去实现的接口路径-->
+    <resultMap id="user" type="com.icss.model.User">
+       <result property="name" column="USERNAME"></result>
+       <result property="pwd" column="PWD"></result>
+    </resultMap>
+    <select id="SelectUserByNameAndPwd" resultType="com.icss.model.User">
+        select * from LOGIN where USERNAME=#{name} AND PWD=#{pwd}
+    </select>
+
+</mapper>
